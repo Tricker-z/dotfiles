@@ -21,6 +21,10 @@ set modelines=0
 
 " Show line numbers
 set number
+set relativenumber
+
+" Show cursorline
+set cursorline
 
 " Show file stats
 set ruler
