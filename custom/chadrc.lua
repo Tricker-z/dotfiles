@@ -1,25 +1,55 @@
--- Chadrc overrides this file
-
 local M = {}
 
-M.options = {
-  nvChad = {
-    update_url = "https://github.com/NvChad/NvChad",
-    update_branch = "main",
-  },
-}
-
 M.ui = {
-  -- hl = highlights
-  hl_add = {},
-  hl_override = {},
-  changed_themes = {},
-  theme_toggle = { "ayu-dark", "ayu_light" },
-  theme = "ayu-dark", -- default theme
-  transparency = false,
+  theme = "aquarium",
 }
 
-M.plugins = require "custom.plugins"
+M.plugins = {
 
+  ["nvim-telescope/telescope.nvim"] = {
+    override_options = {
+      defaults = {
+       prompt_prefix = "󰱽  ",
+      },
+    },
+  },
+
+  ["williamboman/mason.nvim"] = {
+    override_options = {
+      ensure_installed = {
+        -- lua stuff
+        "lua-language-server",
+        "stylua",
+
+        -- shell
+        "shfmt",
+        "shellcheck",
+
+        -- python
+        "python-lsp-server",
+      },
+    },
+  },
+
+  ["nvim-treesitter/nvim-treesitter"] = {
+    override_options = {
+      ensure_installed = {
+        "c",
+        "cpp",
+        "python",
+        "java",
+        "rust",
+      },
+    },
+  },
+
+  ["neovim/nvim-lspconfig"] = {
+    config = function()
+      require "plugins.configs.lspconfig"
+      require "custom.plugins.lspconfig"
+    end,
+  },
+
+}
 
 return M
