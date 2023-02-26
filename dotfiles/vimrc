@@ -23,9 +23,6 @@ set modelines=0
 set number
 set relativenumber
 
-" Show cursorline
-set cursorline
-
 " Show file stats
 set ruler
 
@@ -100,7 +97,3 @@ set t_Co=256
 set background=dark
 let g:solarized_termcolors=256
 let g:solarized_termtrans=1
-" put https://raw.githubusercontent.com/morhetz/gruvbox/master/colors/gruvbox.vim
-" other color schemes can be found at https://vimcolorschemes.com
-" in ~/.vim/colors/ and uncomment:
-" colorscheme gruvbox
