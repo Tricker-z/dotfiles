@@ -6,6 +6,12 @@ M.ui = {
 
 M.plugins = {
 
+  ["github/copilot.vim"] = {},
+
+  ["goolord/alpha-nvim"] = {
+    disable = false,
+  },
+
   ["nvim-telescope/telescope.nvim"] = {
     override_options = {
       defaults = {
