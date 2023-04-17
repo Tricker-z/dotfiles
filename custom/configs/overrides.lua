@@ -19,9 +19,10 @@ M.mason = {
     "stylua",
 
     -- python
-    "python-lsp-server",
+    "pyright",
     "flake8",
     "autopep8",
+    "black",
   },
 }
 
