@@ -13,5 +13,31 @@ for _, lsp in ipairs(servers) do
   }
 end
 
--- 
--- lspconfig.pyright.setup { blabla}
+
+lspconfig.pyright.setup {
+  on_attach = on_attach,
+  capabilities = capabilities,
+
+  root_dir = function(fname)
+    local root_files = {
+      "pyproject.toml",
+      "requirements.txt",
+      "pyrightconfig.json",
+      "Pipfile",
+    }
+    return lspconfig.util.root_pattern(unpack(root_files))(fname) or
+      lspconfig.util.find_git_ancestor(fname) or
+      vim.loop.os_homedir()
+  end,
+
+  settings = {
+    python = {
+      analysis = {
+        autoSearchPaths = true,
+        diagnosticMode = "workspace",
+        useLibraryCodeForTypes = false,
+        typeCheckingMode = "off",
+      },
+    },
+  },
+}
