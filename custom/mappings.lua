@@ -18,22 +18,7 @@ M.nvterm = {
         require("nvterm.terminal").toggle "horizontal"
       end,
       "toggle horizontal term",
-    },
-
-    ["<C-i>"] = {
-      function()
-        require("nvterm.terminal").toggle "float"
-      end,
-      "toggle floating term",
-    },
-
-    ["<C-v>"] = {
-      function()
-        require("nvterm.terminal").toggle "vertical"
-      end,
-      "toggle vertical term",
-    },
-
+    }
   },
 
   n = {
@@ -42,21 +27,7 @@ M.nvterm = {
         require("nvterm.terminal").toggle "horizontal"
       end,
       "toggle horizontal term",
-    },
-
-    ["<C-i>"] = {
-      function()
-        require("nvterm.terminal").toggle "float"
-      end,
-      "toggle floating term",
-    },
-
-    ["<C-v>"] = {
-      function()
-        require("nvterm.terminal").toggle "vertical"
-      end,
-      "toggle vertical term",
-    },
+    }
  }
 }
 
