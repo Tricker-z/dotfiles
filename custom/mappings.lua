@@ -9,26 +9,36 @@ M.general = {
 
 
 M.nvterm = {
-
   plugin = true,
 
   t = {
     ["<C-`>"] = {
       function()
-        require("nvterm.terminal").toggle "horizontal"
+        require("nvterm.terminal").toggle "float"
       end,
-      "toggle horizontal term",
+      "toggle floating term",
     }
   },
 
   n = {
     ["<C-`>"] = {
       function()
-        require("nvterm.terminal").toggle "horizontal"
+        require("nvterm.terminal").toggle "float"
       end,
-      "toggle horizontal term",
+      "toggle floating term",
     }
  }
+}
+
+M.chatgpt = {
+  n = {
+    ["<leader>ge"] = {
+      function()
+        require("chatgpt").edit_with_instructions()
+      end,
+      "Edit with instructions",
+    }
+  },
 }
 
 return M

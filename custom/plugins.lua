@@ -43,7 +43,11 @@ local plugins = {
     opts = overrides.telescope,
   },
 
-  -- Install a plugin
+  {
+    "hrsh7th/nvim-cmp",
+    opts = overrides.nvimcmp,
+  },
+
   {
     "max397574/better-escape.nvim",
     event = "InsertEnter",
@@ -58,60 +62,18 @@ local plugins = {
   },
 
   {
-    "hrsh7th/nvim-cmp",
-    opts = {
-      mapping = {
-        -- disable  tab
-        ["<Tab>"] = function(callback)
-          callback()
-        end,
-
-        ["<S-Tab>"] = function(callback)
-          callback()
-        end,
-
-        -- use Up and down for cycling completion
-        ["<Down>"] = require("cmp").mapping(function(fallback)
-          local cmp = require "cmp"
-          if cmp.visible() then
-            cmp.select_next_item()
-          elseif require("luasnip").expand_or_jumpable() then
-            vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-expand-or-jump", true, true, true), "")
-          else
-            fallback()
-          end
-        end, {
-          "i",
-          "s",
-        }),
-        ["<Up>"] = require("cmp").mapping(function(fallback)
-          local cmp = require "cmp"
-          if cmp.visible() then
-            cmp.select_prev_item()
-          elseif require("luasnip").jumpable(-1) then
-            vim.fn.feedkeys(vim.api.nvim_replace_termcodes("<Plug>luasnip-jump-prev", true, true, true), "")
-          else
-            fallback()
-          end
-        end, {
-          "i",
-          "s",
-        }),
-      },
-    },
+    "jackMort/ChatGPT.nvim",
+      event = "VeryLazy",
+      config = function()
+        require("chatgpt").setup()
+      end,
+      dependencies = {
+        "MunifTanjim/nui.nvim",
+        "nvim-lua/plenary.nvim",
+        "nvim-telescope/telescope.nvim"
+      }
   },
 
-  -- To make a plugin not be loaded
-  -- {
-  --   "NvChad/nvim-colorizer.lua",
-  --   enabled = false
-  -- },
-
-  -- Uncomment if you want to re-enable which-key
-  -- {
-  --   "folke/which-key.nvim",
-  --   enabled = true,
-  -- },
 }
 
 return plugins
