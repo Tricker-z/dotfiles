@@ -28,4 +28,12 @@ lspconfig.pyright.setup {
     return lspconfig.util.root_pattern(unpack(root_files))(fname)
   end,
 
+  settings = {
+    pyright = {
+      autoSearchPaths = true,
+      diagnosticMode = "workspace",
+      typeCheckingMode = "off",
+    }
+  },
+
 }
