@@ -17,6 +17,9 @@ local sources = {
 
   -- cpp
   b.formatting.clang_format,
+
+  -- python
+  b.formatting.black.with { extra_args = {"--line-length", "120"} },
 }
 
 null_ls.setup {
