@@ -10,6 +10,10 @@ M.ui = {
 
   hl_override = highlights.override,
   hl_add = highlights.add,
+
+  cheatsheet = { theme = "simple" },
+
+  statusline = { theme = "default", separator_style = "arrow" },
 }
 
 M.plugins = "custom.plugins"
