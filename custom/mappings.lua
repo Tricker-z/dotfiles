@@ -14,19 +14,19 @@ M.nvterm = {
   t = {
     ["<C-`>"] = {
       function()
-        require("nvterm.terminal").toggle "float"
+        require("nvterm.terminal").toggle "horizontal"
       end,
-      "toggle floating term",
-    }
+      "toggle horizontal term",
+    },
   },
 
   n = {
     ["<C-`>"] = {
       function()
-        require("nvterm.terminal").toggle "float"
+        require("nvterm.terminal").toggle "horizontal"
       end,
-      "toggle floating term",
-    }
+      "toggle horizontal term",
+    },
  }
 }
 
