@@ -9,7 +9,7 @@ M.treesitter = {
     "java",
     "javascript",
     "lua",
-  }
+  },
 }
 
 M.mason = {

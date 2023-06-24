@@ -7,7 +7,6 @@ M.general = {
   },
 }
 
-
 M.nvterm = {
   plugin = true,
 
@@ -27,7 +26,7 @@ M.nvterm = {
       end,
       "toggle horizontal term",
     },
- }
+  },
 }
 
 M.chatgpt = {
@@ -37,7 +36,7 @@ M.chatgpt = {
         require("chatgpt").edit_with_instructions()
       end,
       "Edit with instructions",
-    }
+    },
   },
 }
 
