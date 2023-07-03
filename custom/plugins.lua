@@ -56,6 +56,17 @@ local plugins = {
   },
 
   {
+    "phaazon/hop.nvim",
+    lazy = true,
+    event = "BufReadPost",
+    config = function()
+      require("hop").setup()
+      vim.api.nvim_set_keymap("n", "s", "<cmd>HopChar1<cr>", { silent = true })
+      vim.api.nvim_set_keymap("n", "S", "<cmd>HopChar2<cr>", { silent = true })
+    end,
+  },
+
+  {
     "github/copilot.vim",
     lazy = false,
   },
