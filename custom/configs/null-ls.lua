@@ -19,7 +19,7 @@ local sources = {
   -- b.formatting.clang_format,
 
   -- python
-  b.formatting.black.with { extra_args = { "--line-length", "120" } },
+  b.formatting.black.with { extra_args = { "--line-length", "100" } },
 }
 
 null_ls.setup {

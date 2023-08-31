@@ -23,6 +23,7 @@ lspconfig.pyright.setup {
       "requirements.txt",
       "pyrightconfig.json",
       "Pipfile",
+      "README.md",
     }
     return lspconfig.util.root_pattern(unpack(root_files))(fname)
   end,

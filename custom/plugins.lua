@@ -88,6 +88,11 @@ local plugins = {
       "nvim-telescope/telescope.nvim",
     },
   },
+
+  {
+    "nvim-treesitter/playground",
+    event = "VeryLazy",
+  },
 }
 
 return plugins
