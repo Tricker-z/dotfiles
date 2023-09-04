@@ -55,6 +55,9 @@ runtime! macros/matchit.vim
 nnoremap j gj
 nnoremap k gk
 
+Command map
+nnoremap ; :
+
 " Allow hidden buffers
 set hidden
 " Rendering
